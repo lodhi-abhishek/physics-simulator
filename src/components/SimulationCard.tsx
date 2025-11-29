@@ -17,7 +17,7 @@ const SimulationCard: React.FC<SimulationCardProps> = ({ config, globalSettings 
   const [resetKey, setResetKey] = React.useState(0);
 
   return (
-    <div className="bg-gray-900 rounded-xl overflow-hidden shadow-lg border border-gray-800 hover:border-cyan-500/50 transition-colors duration-300 flex flex-col relative group w-full max-w-xs">
+    <div className="bg-gray-900 rounded-xl overflow-hidden shadow-lg border border-gray-800 hover:border-cyan-500/50 transition-all duration-300 flex flex-col relative group w-full max-w-xs">
       
       {/* Header Overlay */}
       <div className="absolute top-0 left-0 w-full p-3 flex justify-between items-start z-10 pointer-events-none">
@@ -34,7 +34,7 @@ const SimulationCard: React.FC<SimulationCardProps> = ({ config, globalSettings 
       </div>
 
       {/* Canvas Area */}
-      <div className="flex-grow relative aspect-square bg-black">
+      <div className="flex-none relative aspect-square bg-black w-full">
         {/* The key prop forces full remount of Canvas on reset */}
         <Canvas key={resetKey} config={config} globalSettings={globalSettings} />
       </div>
